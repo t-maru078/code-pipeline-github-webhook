@@ -32,7 +32,7 @@ Resources:
                 Provider: S3
               Configuration:
                 S3Bucket: !Ref SourceCodeRepositoryName
-                S3ObjectKey: !Sub "latest.zip"
+                S3ObjectKey: "latest.zip"
                 PollForSourceChanges: false
               Name: Source
               OutputArtifacts:

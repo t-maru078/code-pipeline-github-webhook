@@ -111,6 +111,7 @@ Resources:
   PipelineStatusTable:
     Type: AWS::DynamoDB::Table
     Properties:
+      BillingMode: PAY_PER_REQUEST
       AttributeDefinitions:
         - AttributeName: BuildId
           AttributeType: S
@@ -119,9 +120,6 @@ Resources:
       KeySchema:
         - AttributeName: BuildId
           KeyType: HASH
-      ProvisionedThroughput:
-        ReadCapacityUnits: 5
-        WriteCapacityUnits: 5
       GlobalSecondaryIndexes:
         - IndexName: PipelineStatusIndex
           KeySchema:
@@ -134,9 +132,6 @@ Resources:
               - Status
               - TimeToLive
             ProjectionType: INCLUDE
-          ProvisionedThroughput:
-            ReadCapacityUnits: 5
-            WriteCapacityUnits: 5
       TimeToLiveSpecification:
         AttributeName: TimeToLive
         Enabled: true

@@ -8,7 +8,7 @@ CloudFormation template を使って AWS リソースを定義しているため
 
 ## 構成図
 
-![workflow](./docs/assets/workflow.jpg)
+![architecture](./docs/assets/architecture.jpg)
 
 ## AWS へのデプロイ
 
